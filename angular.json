@@ -145,6 +145,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "eKartSolutionBackend"
+    }
+  },
+  "defaultProject": "eKartSolutionBackend",
+  "cli": {
+    "analytics": "00fe0165-52de-43d0-a5b0-2840af13d122"
+  }
 }

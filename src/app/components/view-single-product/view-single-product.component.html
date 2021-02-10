@@ -1,0 +1,49 @@
+<div class="card" *ngIf="product">
+     <div class="row">
+          <div class="col-sm-3">
+               <img [src]="product.productImage"  alt="Product Image" class="img-thumbnail" width="100px" height="100px">
+          </div>
+          <div class="col-sm-8">
+               <h2 class="title">{{ product.productName }}</h2>
+          </div>
+     </div>
+     <div class="card-body">
+          <p class="card-text">{{ product.productDiscription }}</p>
+          <!-- <div class="card-title text-center">Sizes-</div> -->
+          <div class="form-group">
+               <label for="sizeType">Select Size Type</label>
+               <select class="form-control" id="sizeType" (change)="onSelectSize(selectChange.value)" #selectChange>
+                 <option *ngFor="let prod of product.productSize; index as i " [value]="prod | json">{{ i+1 }}</option>
+               </select>
+             </div>
+          <table class="table table-hover">
+               <thead>
+                 <tr>
+                   <!-- <th scope="col">Size Type : </th> -->
+                   <!-- <th scope="col">1</th> -->
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <th scope="row">SIZE : </th>
+                   <td>
+                    {{ productSizes.size}}
+                   </td>
+    
+                 </tr>
+                 <tr>
+                   <th scope="row">MRP : </th>
+                   <td style="width: 20em;">
+                    {{ productSizes.mrp}}
+                    </td>
+                 </tr>
+                 <tr>
+                    <th scope="row">PRICE : </th>
+                    <td>
+                         {{ productSizes.price}}
+                    </td>
+                  </tr>
+               </tbody>
+             </table>
+     </div>
+</div>
